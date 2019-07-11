@@ -29,12 +29,7 @@ We filter our dict to remove key : value pairs with less than 15 occurrence or m
 
 ![p4](https://miro.medium.com/max/700/1*mbL4l25V21iGmvAFZy6Qfw.png)<br/>
 ### Run LDA model using BOW with gensim
-```lda_model = gensim.models.LdaMulticore(bow_corpus, 
-                                       num_topics=10, 
-                                       id2word = dictionary, 
-                                       passes = 2, 
-                                       workers=2)
-```
+```lda_model = gensim.models.LdaMulticore(bow_corpus,num_topics=10,id2word = dictionary,passes = 2,workers=2)```
 Here I choose num_topics=10, we can write a function to determine the optimal number of the paramter, which will be discussed later.     ### Interpret the result
                                   
 ![p5](https://miro.medium.com/max/1000/1*-wBRq5MA0AL0_XUTKA7ODA.png)<br/>
@@ -57,8 +52,7 @@ coherence_values = []
         model_list.append(model)
         coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence='c_v')
         coherence_values.append(coherencemodel.get_coherence())
-return model_list, coherence_values
-```
+return model_list, coherence_values```
 
 ![p7](https://miro.medium.com/max/434/1*eQNTOt8XVbRCzplTVwjv3Q.png)<br/>
 ### Try the LDA model with unseen data

@@ -19,8 +19,7 @@ So our processed corpus will be in this form, each document is a list of token, 
 ### Get the Bag of word dict
 
 To build LDA model with Gensim, we need to feed corpus in form of Bag of word dict or tf-idf dict.
-```dictionary = gensim.corpora.Dictionary(processed_docs)
-```
+```dictionary = gensim.corpora.Dictionary(processed_docs)```
 We filter our dict to remove key : value pairs with less than 15 occurrence or more than 10% of total number of sample<br/>
 ```dictionary.filter_extremes(no_below=15, no_above=0.1)```
 ### Convert into bag of word format for doc2bow

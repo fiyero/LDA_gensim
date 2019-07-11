@@ -52,7 +52,8 @@ coherence_values = []
         model_list.append(model)
         coherencemodel = CoherenceModel(model=model, texts=texts, dictionary=dictionary, coherence='c_v')
         coherence_values.append(coherencemodel.get_coherence())
-return model_list, coherence_values```
+return model_list, coherence_values
+```
 
 ![p7](https://miro.medium.com/max/434/1*eQNTOt8XVbRCzplTVwjv3Q.png)<br/>
 ### Try the LDA model with unseen data
